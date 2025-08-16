@@ -1,0 +1,112 @@
+import React from "react";
+import { Card, CardContent } from "@/components/ui/card";
+import { Button } from "@/components/ui/button";
+
+const HomePage = () => {
+  return (
+    <main className="p-6 space-y-8">
+      {/* Header */}
+      <section className="text-center">
+        <h1 className="text-4xl font-bold">Meraj Pathan</h1>
+        <p className="text-xl text-gray-600">DevOps / Software Engineer</p>
+        <p className="text-sm text-gray-500">Hyderabad, India</p>
+      </section>
+
+      {/* About */}
+      <Card>
+        <CardContent className="p-4">
+          <h2 className="text-2xl font-semibold mb-2">About Me</h2>
+          <p>
+            Hands-on experience in DevOps, specializing in CI/CD automation,
+            containerization, and infrastructure-as-code. Passionate about
+            fostering collaboration between development and operations.
+          </p>
+        </CardContent>
+      </Card>
+
+      {/* Projects */}
+      <Card>
+        <CardContent className="p-4">
+          <h2 className="text-2xl font-semibold mb-4">Projects</h2>
+          <div className="space-y-4">
+            <div>
+              <h3 className="font-semibold">End-to-End CI/CD Pipeline on AWS</h3>
+              <p>
+                Designed and deployed a full CI/CD pipeline using AWS CodeCommit,
+                CodeBuild, CodePipeline, and CodeDeploy with monitoring via
+                CloudWatch.
+              </p>
+            </div>
+            <div>
+              <h3 className="font-semibold">TO-DO-LIST with Kubernetes</h3>
+              <p>
+                Built and deployed a scalable app using Kubernetes pods,
+                integrated CI/CD, and monitored performance with Grafana.
+              </p>
+            </div>
+          </div>
+        </CardContent>
+      </Card>
+
+      {/* Skills */}
+      <Card>
+        <CardContent className="p-4">
+          <h2 className="text-2xl font-semibold mb-2">Technical Skills</h2>
+          <p>
+            Git, GitHub, Jenkins, Kubernetes, Terraform, Ansible, Docker, Linux,
+            AWS, YAML, Python, Bash, PowerShell, Jira, Agile, Scrum
+          </p>
+        </CardContent>
+      </Card>
+
+      {/* Experience */}
+      <Card>
+        <CardContent className="p-4">
+          <h2 className="text-2xl font-semibold mb-2">Professional Experience</h2>
+          <p className="font-semibold">Bank of America Continuum India Pvt. Ltd</p>
+          <p>Officer Software Engineer 1A (03/2021 - Present)</p>
+          <ul className="list-disc ml-6">
+            <li>Automated infrastructure provisioning and CI/CD pipelines</li>
+            <li>Worked with Kubernetes, Docker, Jenkins, and Terraform</li>
+            <li>Integrated monitoring and rollback mechanisms</li>
+          </ul>
+        </CardContent>
+      </Card>
+
+      {/* Education */}
+      <Card>
+        <CardContent className="p-4">
+          <h2 className="text-2xl font-semibold mb-2">Education</h2>
+          <ul className="list-disc ml-6">
+            <li>B.E. in Computer Engineering – JSPMs Jayawantrao Sawant College</li>
+            <li>Diploma in Computer Technology – Yashwantrao Chavan Institute</li>
+            <li>PG DAC – Infoway Technologies CDAC, Pune</li>
+          </ul>
+        </CardContent>
+      </Card>
+
+      {/* Awards */}
+      <Card>
+        <CardContent className="p-4">
+          <h2 className="text-2xl font-semibold mb-2">Awards</h2>
+          <ul className="list-disc ml-6">
+            <li>Bronze Award (2021, 2022, 2023) – Bank of America</li>
+            <li>Silver Award (2022) – Bank of America</li>
+          </ul>
+        </CardContent>
+      </Card>
+
+      {/* Contact */}
+      <Card>
+        <CardContent className="p-4 text-center">
+          <h2 className="text-2xl font-semibold mb-2">Contact</h2>
+          <p>Email: <a href="mailto:merajpathan85@gmail.com" className="text-blue-600">merajpathan85@gmail.com</a></p>
+          <p>Phone: <a href="tel:9527067806" className="text-blue-600">9527067806</a></p>
+          <p>LinkedIn: <a href="https://www.linkedin.com/in/pathan-meraj" target="_blank" className="text-blue-600">linkedin.com/in/pathan-meraj</a></p>
+        </CardContent>
+      </Card>
+    </main>
+  );
+};
+
+export default HomePage;
