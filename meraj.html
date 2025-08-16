@@ -1,112 +1,153 @@
-import React from "react";
-import { Card, CardContent } from "@/components/ui/card";
-import { Button } from "@/components/ui/button";
+<!doctype html>
+<html lang="en">
+<head>
+  <meta charset="utf-8" />
+  <title>Fruit Buy & Sell</title>
+  <meta name="viewport" content="width=device-width, initial-scale=1" />
+  <style>
+    body {
+      margin: 0;
+      font-family: Arial, sans-serif;
+      background: linear-gradient(135deg, #ffecd2, #fcb69f);
+      display: flex;
+      flex-direction: column;
+      align-items: center;
+      padding: 20px;
+    }
 
-const HomePage = () => {
-  return (
-    <main className="p-6 space-y-8">
-      {/* Header */}
-      <section className="text-center">
-        <h1 className="text-4xl font-bold">Meraj Pathan</h1>
-        <p className="text-xl text-gray-600">DevOps / Software Engineer</p>
-        <p className="text-sm text-gray-500">Hyderabad, India</p>
-      </section>
+    h1 {
+      color: #333;
+      text-shadow: 2px 2px 4px rgba(0,0,0,0.2);
+    }
 
-      {/* About */}
-      <Card>
-        <CardContent className="p-4">
-          <h2 className="text-2xl font-semibold mb-2">About Me</h2>
-          <p>
-            Hands-on experience in DevOps, specializing in CI/CD automation,
-            containerization, and infrastructure-as-code. Passionate about
-            fostering collaboration between development and operations.
-          </p>
-        </CardContent>
-      </Card>
+    .container {
+      display: grid;
+      grid-template-columns: repeat(auto-fit, minmax(250px, 1fr));
+      gap: 20px;
+      width: 100%;
+      max-width: 1000px;
+      margin-top: 30px;
+    }
 
-      {/* Projects */}
-      <Card>
-        <CardContent className="p-4">
-          <h2 className="text-2xl font-semibold mb-4">Projects</h2>
-          <div className="space-y-4">
-            <div>
-              <h3 className="font-semibold">End-to-End CI/CD Pipeline on AWS</h3>
-              <p>
-                Designed and deployed a full CI/CD pipeline using AWS CodeCommit,
-                CodeBuild, CodePipeline, and CodeDeploy with monitoring via
-                CloudWatch.
-              </p>
-            </div>
-            <div>
-              <h3 className="font-semibold">TO-DO-LIST with Kubernetes</h3>
-              <p>
-                Built and deployed a scalable app using Kubernetes pods,
-                integrated CI/CD, and monitored performance with Grafana.
-              </p>
-            </div>
-          </div>
-        </CardContent>
-      </Card>
+    .card {
+      perspective: 1000px;
+    }
 
-      {/* Skills */}
-      <Card>
-        <CardContent className="p-4">
-          <h2 className="text-2xl font-semibold mb-2">Technical Skills</h2>
-          <p>
-            Git, GitHub, Jenkins, Kubernetes, Terraform, Ansible, Docker, Linux,
-            AWS, YAML, Python, Bash, PowerShell, Jira, Agile, Scrum
-          </p>
-        </CardContent>
-      </Card>
+    .card-inner {
+      position: relative;
+      width: 100%;
+      height: 320px;
+      transform-style: preserve-3d;
+      transition: transform 0.8s;
+    }
 
-      {/* Experience */}
-      <Card>
-        <CardContent className="p-4">
-          <h2 className="text-2xl font-semibold mb-2">Professional Experience</h2>
-          <p className="font-semibold">Bank of America Continuum India Pvt. Ltd</p>
-          <p>Officer Software Engineer 1A (03/2021 - Present)</p>
-          <ul className="list-disc ml-6">
-            <li>Automated infrastructure provisioning and CI/CD pipelines</li>
-            <li>Worked with Kubernetes, Docker, Jenkins, and Terraform</li>
-            <li>Integrated monitoring and rollback mechanisms</li>
-          </ul>
-        </CardContent>
-      </Card>
+    .card:hover .card-inner {
+      transform: rotateY(180deg);
+    }
 
-      {/* Education */}
-      <Card>
-        <CardContent className="p-4">
-          <h2 className="text-2xl font-semibold mb-2">Education</h2>
-          <ul className="list-disc ml-6">
-            <li>B.E. in Computer Engineering – JSPMs Jayawantrao Sawant College</li>
-            <li>Diploma in Computer Technology – Yashwantrao Chavan Institute</li>
-            <li>PG DAC – Infoway Technologies CDAC, Pune</li>
-          </ul>
-        </CardContent>
-      </Card>
+    .card-front, .card-back {
+      position: absolute;
+      width: 100%;
+      height: 100%;
+      border-radius: 15px;
+      backface-visibility: hidden;
+      box-shadow: 0 8px 20px rgba(0,0,0,0.2);
+    }
 
-      {/* Awards */}
-      <Card>
-        <CardContent className="p-4">
-          <h2 className="text-2xl font-semibold mb-2">Awards</h2>
-          <ul className="list-disc ml-6">
-            <li>Bronze Award (2021, 2022, 2023) – Bank of America</li>
-            <li>Silver Award (2022) – Bank of America</li>
-          </ul>
-        </CardContent>
-      </Card>
+    .card-front {
+      background: white;
+      display: flex;
+      flex-direction: column;
+      align-items: center;
+      justify-content: center;
+      padding: 20px;
+    }
 
-      {/* Contact */}
-      <Card>
-        <CardContent className="p-4 text-center">
-          <h2 className="text-2xl font-semibold mb-2">Contact</h2>
-          <p>Email: <a href="mailto:merajpathan85@gmail.com" className="text-blue-600">merajpathan85@gmail.com</a></p>
-          <p>Phone: <a href="tel:9527067806" className="text-blue-600">9527067806</a></p>
-          <p>LinkedIn: <a href="https://www.linkedin.com/in/pathan-meraj" target="_blank" className="text-blue-600">linkedin.com/in/pathan-meraj</a></p>
-        </CardContent>
-      </Card>
-    </main>
-  );
-};
+    .card-front img {
+      width: 120px;
+      height: 120px;
+      object-fit: contain;
+      margin-bottom: 15px;
+    }
 
-export default HomePage;
+    .card-back {
+      background: #fff8e7;
+      transform: rotateY(180deg);
+      display: flex;
+      flex-direction: column;
+      align-items: center;
+      justify-content: center;
+      padding: 20px;
+    }
+
+    button {
+      padding: 10px 20px;
+      border: none;
+      border-radius: 8px;
+      background: #ff7f50;
+      color: white;
+      font-size: 16px;
+      cursor: pointer;
+      transition: background 0.3s;
+    }
+
+    button:hover {
+      background: #e5673c;
+    }
+  </style>
+</head>
+<body>
+  <h1>🍎 Fruit Buy & Sell 🍌</h1>
+  <div class="container">
+    
+    <!-- Apple -->
+    <div class="card">
+      <div class="card-inner">
+        <div class="card-front">
+          <img src="https://upload.wikimedia.org/wikipedia/commons/1/15/Red_Apple.jpg" alt="Apple" />
+          <h2>Apple</h2>
+          <p>Fresh and juicy apples</p>
+        </div>
+        <div class="card-back">
+          <h3>Price: $2 / kg</h3>
+          <button>Buy</button>
+          <button>Sell</button>
+        </div>
+      </div>
+    </div>
+
+    <!-- Banana -->
+    <div class="card">
+      <div class="card-inner">
+        <div class="card-front">
+          <img src="https://upload.wikimedia.org/wikipedia/commons/8/8a/Banana-Single.jpg" alt="Banana" />
+          <h2>Banana</h2>
+          <p>Sweet ripe bananas</p>
+        </div>
+        <div class="card-back">
+          <h3>Price: $1.5 / kg</h3>
+          <button>Buy</button>
+          <button>Sell</button>
+        </div>
+      </div>
+    </div>
+
+    <!-- Orange -->
+    <div class="card">
+      <div class="card-inner">
+        <div class="card-front">
+          <img src="https://upload.wikimedia.org/wikipedia/commons/c/c4/Orange-Fruit-Pieces.jpg" alt="Orange" />
+          <h2>Orange</h2>
+          <p>Citrusy and refreshing</p>
+        </div>
+        <div class="card-back">
+          <h3>Price: $2.5 / kg</h3>
+          <button>Buy</button>
+          <button>Sell</button>
+        </div>
+      </div>
+    </div>
+
+  </div>
+</body>
+</html>
