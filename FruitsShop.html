@@ -1,0 +1,117 @@
+<!doctype html>
+<html lang="en">
+<head>
+  <meta charset="utf-8" />
+  <title>Fruit Buy & Sell Form</title>
+
+	<title>Fill the Below Form</title>
+  <meta name="viewport" content="width=device-width, initial-scale=1" />
+  <style>
+    body {
+      font-family: Arial, sans-serif;
+      background: #f7f7f7;
+      display: flex;
+      justify-content: center;
+      align-items: center;
+      height: 100vh;
+      margin: 0;
+    }
+    .form-container {
+      background: #fff;
+      padding: 25px;
+      border-radius: 12px;
+      box-shadow: 0 8px 20px rgba(0,0,0,0.2);
+      width: 100%;
+      max-width: 400px;
+    }
+    h1 {
+      text-align: center;
+      margin-bottom: 20px;
+      color: #444;
+    }
+    label {
+      display: block;
+      margin: 10px 0 5px;
+      font-weight: bold;
+    }
+    input, select, textarea, button {
+      width: 100%;
+      padding: 10px;
+      margin-bottom: 15px;
+      border-radius: 6px;
+      border: 1px solid #ccc;
+      font-size: 14px;
+    }
+    button {
+      background: #28a745;
+      color: #fff;
+      border: none;
+      cursor: pointer;
+      transition: background 0.3s;
+    }
+    button:hover {
+      background: #218838;
+    }
+  </style>
+</head>
+<body>
+  <div class="form-container">
+    <h1>🍎 Fruit Buy & Sell 🍌</h1>
+    <form action="#" method="post">
+      
+      <!-- Name -->
+      <label for="name">Your Name</label>
+      <input type="text" id="name" name="name" required />
+
+      <!-- Email -->
+      <label for="email">Email</label>
+      <input type="email" id="email" name="email" required />
+
+      <!-- Action -->
+      <label for="action">I want to:</label>
+      <select id="action" name="action" required>
+        <option value="">-- Select --</option>
+        <option value="buy">Buy Fruits</option>
+        <option value="sell">Sell Fruits</option>
+      </select>
+
+      <!-- Fruit type -->
+      <label for="fruit">Choose Fruit</label>
+      <select id="fruit" name="fruit" required>
+        <option value="">-- Select Fruit --</option>
+        <option value="apple">Apple</option>
+        <option value="banana">Banana</option>
+        <option value="orange">Orange</option>
+        <option value="mango">Mango</option>
+      </select>
+
+      <!-- Quantity -->
+      <label for="quantity">Quantity (kg)</label>
+      <input type="number" id="quantity" name="quantity" min="1" required />
+
+      <!-- Message -->
+      <label for="message">Additional Notes</label>
+      <textarea id="message" name="message" rows="3"></textarea>
+
+      <!-- Submit -->
+      <button type="submit">Submit</button>
+	  ...
+    <!-- Submit -->
+    <button type="submit">Submit</button>
+  </form>
+
+  <!-- Link -->
+  <p style="text-align:center;">
+    🍇 <a href="meraj.html" target="_blank">Visit our Fruit Store</a>
+  </p>
+  
+    <p style="text-align:center;">
+    🍇 <a href="//https.www.google.com" target="_blank">Any question</a>
+  </p>
+</div>
+...
+
+    </form>
+  </div>
+</body>
+</html>
